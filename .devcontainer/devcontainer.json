@@ -1,0 +1,24 @@
+{
+  "name": "Mi Contenedor de cliente web",
+  "workspaceFolder": "/code",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/code,type=bind"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "extensions": [
+          "dsznajder.es7-react-js-snippets",
+          "esbenp.prettier-vscode",
+          "vincaslt.highlight-matching-tag",
+          "formulahendry.auto-rename-tag"
+        ]
+      }
+    }
+  },
+  "postCreateCommand": "pnpm install -y",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  // "runServices": ["api"],
+  "overrideCommand": true
+}
