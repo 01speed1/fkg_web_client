@@ -5,37 +5,47 @@ import { useAuth } from '../components/utils/AuthContext';
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
+
   const navigate = useNavigate();
   const { login } = useAuth();
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const response = await fetch('http://localhost:8000/api/v1/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: new URLSearchParams({
-        username: username,
-        password: password,
-        grant_type: 'password',
-      }).toString(),
-    });
+    let response: Response;
+    try {
+      response = await fetch('http://localhost:8000/api/v1/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          username: username,
+          password: password,
+          grant_type: 'password',
+        }).toString(),
+      });
 
-    if (response.ok) {
-      const data = await response.json();
-      localStorage.setItem('access_token', data.access_token);
-      localStorage.setItem('token_type', data.token_type);
-      login();
-      navigate('/support-cases/new');
-    } else {
-      console.error('Login failed');
+
+      if (response.ok) {
+        const data = await response.json();
+        localStorage.setItem('access_token', data.access_token);
+        localStorage.setItem('token_type', data.token_type);
+        login();
+        setError(null);
+        navigate('/support-cases/new');
+      } else {
+        setError('Login failed. Please check your username and password.');
+      }
+    } catch (error) {
+      setError('Login failed. Please check your username and password.');
     }
   };
 
   return (
     <div className='Login Card'>
+      {error && <div className='Login__error'>{error}</div>}
       <h2 className='Login__title'>Login</h2>
       <form className='Login__formLogin' onSubmit={handleSubmit}>
         <div className='FormLogin__input'>

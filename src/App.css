@@ -24,6 +24,12 @@
   flex-direction: column;
 }
 
+.Login__error {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
 .Login__title {
   font-size: 2em;
   margin-bottom: 20px;
