@@ -8,6 +8,7 @@ You can access the client at the following link:
 [https://fkg-web-client.onrender.com](https://fkg-web-client.onrender.com)
 
 The default user is:
+
 - **Username:** admin
 - **Password:** pass
 
@@ -27,60 +28,61 @@ To set up a development environment with a custom Node.js 22 image, follow these
 
 1. **Clone the repository:**
 
-    ```bash
-    git clone <REPOSITORY_URL>
-    cd fkg_web_client
-    ```
+   ```bash
+   git clone <REPOSITORY_URL>
+   cd fkg_web_client
+   ```
 
 2. **Set up the development environment:**
 
-    Make sure you have Docker and Docker Compose installed on your machine.
+   Make sure you have Docker and Docker Compose installed on your machine.
 
 3. **Build and start the containers:**
 
-    ```bash
-    docker-compose up --build
-    ```
+   ```bash
+   docker-compose up --build
+   ```
 
 4. **Access the web client:**
 
-    The web client will be available at [http://localhost:3000](http://localhost:3000).
+   The web client will be available at [http://localhost:3000](http://localhost:3000).
 
 5. **Setup in Visual Studio Code:**
 
-    Open the project in Visual Studio Code and make sure you have the following extensions installed:
-    - dsznajder.es7-react-js-snippets
-    - esbenp.prettier-vscode
-    - vincaslt.highlight-matching-tag
-    - formulahendry.auto-rename-tag
+   Open the project in Visual Studio Code and make sure you have the following extensions installed:
 
-    You can use the [`devcontainer.json`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Foscar%2FProjects%2FFKG%2Ffkg_web_client%2F.devcontainer%2Fdevcontainer.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22b1f3bfa7-82d5-4e5b-8e6f-91a36a7be344%22%5D "/home/oscar/Projects/FKG/fkg_web_client/.devcontainer/devcontainer.json") file to configure a custom development container.
+   - dsznajder.es7-react-js-snippets
+   - esbenp.prettier-vscode
+   - vincaslt.highlight-matching-tag
+   - formulahendry.auto-rename-tag
 
-    ```json
-    {
-      "name": "My Web Client Container",
-      "workspaceFolder": "/code",
-      "mounts": [
-        "source=${localWorkspaceFolder},target=/code,type=bind"
-      ],
-      "customizations": {
-        "vscode": {
-          "settings": {
-            "extensions": [
-              "dsznajder.es7-react-js-snippets",
-              "esbenp.prettier-vscode",
-              "vincaslt.highlight-matching-tag",
-              "formulahendry.auto-rename-tag"
-            ]
-          }
-        }
-      },
-      "postCreateCommand": "pnpm install",
-      "dockerComposeFile": "../docker-compose.yml",
-      "service": "web",
-      "overrideCommand": true
-    }
-    ```
+   You can use the [`devcontainer.json`](command:_github.copilot.openRelativePath?%5B%7B%22scheme%22%3A%22file%22%2C%22authority%22%3A%22%22%2C%22path%22%3A%22%2Fhome%2Foscar%2FProjects%2FFKG%2Ffkg_web_client%2F.devcontainer%2Fdevcontainer.json%22%2C%22query%22%3A%22%22%2C%22fragment%22%3A%22%22%7D%2C%22b1f3bfa7-82d5-4e5b-8e6f-91a36a7be344%22%5D "/home/oscar/Projects/FKG/fkg_web_client/.devcontainer/devcontainer.json") file to configure a custom development container.
+
+   ```json
+   {
+     "name": "My Web Client Container",
+     "workspaceFolder": "/code",
+     "mounts": ["source=${localWorkspaceFolder},target=/code,type=bind"],
+     "customizations": {
+       "vscode": {
+         "settings": {
+           "extensions": [
+             "dsznajder.es7-react-js-snippets",
+             "esbenp.prettier-vscode",
+             "vincaslt.highlight-matching-tag",
+             "formulahendry.auto-rename-tag"
+           ]
+         }
+       }
+     },
+     "postCreateCommand": "pnpm install",
+     "dockerComposeFile": "../docker-compose.yml",
+     "service": "web",
+     "overrideCommand": true
+   }
+   ```
+
+  **Important Note**: The API has only been tested and developed within containers. I cannot guarantee that it will function properly outside of this environment.
 
 ## Dependencies
 
@@ -96,6 +98,7 @@ By default, the API starts on port 8000, so the IP would be [http://localhost:80
 ## Observations
 
 Things I would have liked to implement:
+
 - Cover the frontend with tests.
 - Implement a state management technique, use Sustand or Redux.
 - Better styles.
