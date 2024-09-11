@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const { VITE_APP_API_URL } = import.meta.env;
@@ -6,7 +6,7 @@ const { VITE_APP_API_URL } = import.meta.env;
 const SupportRequestList = () => {
   const [requests, setRequests] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
+  const [, setTotalPages] = useState(1);
   const [hideNextButton, setHideNextButton] = useState(true);
   const limit = 10;
 
