@@ -17,7 +17,7 @@ const Login: React.FC = () => {
 
     let response: Response;
     try {
-      response = await fetch(`${VITE_APP_API_URL}/api/v1/login`, {
+      response = await fetch(`${VITE_APP_API_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
