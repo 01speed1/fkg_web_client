@@ -82,7 +82,7 @@ To set up a development environment with a custom Node.js 22 image, follow these
    }
    ```
 
-  **Important Note**: The API has only been tested and developed within containers. I cannot guarantee that it will function properly outside of this environment.
+  **Important Note**: This web client has only been tested and developed within containers. I cannot guarantee that it will function properly outside of this environment.
 
 ## Dependencies
 
