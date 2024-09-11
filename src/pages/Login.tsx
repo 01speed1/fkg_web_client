@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../components/utils/AuthContext';
 
+const { VITE_APP_API_URL } = import.meta.env;
+
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +17,7 @@ const Login: React.FC = () => {
 
     let response: Response;
     try {
-      response = await fetch('http://localhost:8000/api/v1/login', {
+      response = await fetch(`${VITE_APP_API_URL}/api/v1/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
