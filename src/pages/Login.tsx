@@ -51,7 +51,7 @@ const Login: React.FC = () => {
       <h2 className='Login__title'>Login</h2>
       <form className='Login__formLogin' onSubmit={handleSubmit}>
         <div className='FormLogin__input'>
-          <label htmlFor="username">Nombre de usuario:</label>
+          <label htmlFor="username">Username:</label>
           <input
             type="text"
             id="username"
