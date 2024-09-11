@@ -16,7 +16,7 @@
       }
     }
   },
-  "postCreateCommand": "pnpm install -y",
+  "postCreateCommand": "pnpm install",
   "dockerComposeFile": "../docker-compose.yml",
   "service": "web",
   // "runServices": ["api"],

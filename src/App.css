@@ -2,41 +2,352 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  width: 100%;
+}
+
+.Card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.Login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  flex-direction: column;
+}
+
+.Login__title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.Login__formLogin {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormLogin__input {
+  margin-bottom: 15px;
+}
+
+.FormLogin__input label {
+  color: #333;
+}
+
+.FormLogin__input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.FormLogin__input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(51, 51, 51, 0.1);
+  font-size: 16px;
+  background-color: #3c3c3c;
+}
+
+.FormLogin__input input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.FormLogin__submit {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 110%;
+}
+
+.FormLogin__submit:hover {
+  background-color: #0056b3;
+}
+
+
+.CasesList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  width: 70%;
+  max-width: 1200px;
+}
+
+.CasesList__case {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.CasesList__case a {
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.CasesList__case span {
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .CasesList {
+    width: 95%;
+  }
+}
+
+.Cases {
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Cases__title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Cases__pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Cases__pagination button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.Cases__pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.card {
-  padding: 2em;
+.Cases__pagination span {
+  font-size: 1.2em;
+  color: #333;
 }
 
-.read-the-docs {
-  color: #888;
+/**/
+
+.GenerateCase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.GenerateCase__title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #bfbfbf;
+  text-align: center;
+}
+
+.GenerateCase__button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.GenerateCase__button:hover {
+  background-color: #0056b3;
+}
+
+.GenerateCase__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.GenerateCase__cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.GenerateCase .GenerateCase__cards .Card p {
+  color: #333;
+}
+
+.GenerateCase__input {
+  margin-bottom: 15px;
+}
+
+.GenerateCase__input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.GenerateCase__input input,
+.GenerateCase__input textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.GenerateCase__input input:focus,
+.GenerateCase__input textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.GenerateCase__submit {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 10rem;
+}
+
+.GenerateCase__submit:hover {
+  background-color: #0056b3;
+}
+
+
+/**/
+
+.CaseDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.CaseDetails__title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #c5c5c5;
+  text-align: center;
+}
+
+.CaseDetails__info {
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.CaseDetails__info p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.CaseDetails__info h3 {
+  margin: 10px 0;
+  color: #333;
+  font-size: 1.5rem;
+
+}
+
+.CaseDetails__info p strong {
+  margin: 10px 0;
+  color: #333;
+}
+
+.CaseDetails__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 850px;
+}
+
+.CaseDetails__input {
+  margin-bottom: 15px;
+}
+
+.CaseDetails__input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.CaseDetails__input select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+.CaseDetails__input select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.CaseDetails__submit {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.CaseDetails__submit:hover {
+  background-color: #0056b3;
+}
+
+.CaseDetails__backButton {
+  padding: 10px 15px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.CaseDetails__backButton:hover {
+  background-color: #5a6268;
 }
